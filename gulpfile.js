@@ -19,9 +19,12 @@ gulp.task('default', function() {
             if (shell) {
                 shell.end(function() {
                     console.log("Pyhon shell: Old ended");
+                    shell = new PythonShell('server.py')
+                    console.log("Pyhon shell: New started");
                 })
+            } else {
+                shell = new PythonShell('server.py')
+                console.log("Pyhon shell: New started");
             }
-            shell = new PythonShell('server.py')
-            console.log("Pyhon shell: New started");
         });
 });
