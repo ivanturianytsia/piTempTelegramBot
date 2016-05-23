@@ -31,6 +31,6 @@ def echo_all(message):
 	if message.text.lower() == "temp":
 		bot.send_message(message.from_user.id, "Currently temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
 	else:
-	    bot.send_message(message.from_user.id, "Send 'temp' to get current temperature.")
+	    bot.send_message(message.from_user.id, "Send 'temp' to get current temperature. Change")
 
 bot.polling()
