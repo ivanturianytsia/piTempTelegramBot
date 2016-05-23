@@ -15,3 +15,16 @@ Add the [piTemperatureBot](telegram.me/piTemperatureBot).
 Send a message to him with this content: 'temp'.
 You will get the answer like this: 'Currently temperature is: 0'.
 Profit.
+## Features
+Automatic pull requests and server starting script added using [Gulp](http://gulpjs.com/). First install gulp globally:
+```
+npm install -g gulp
+```
+Than install other packages:
+```
+npm install
+```
+Start polling repository:
+```
+gulp
+```
