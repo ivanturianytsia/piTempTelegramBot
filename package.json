@@ -1,7 +1,7 @@
 {
     "name": "pitemptelegrambot",
     "version": "1.0.0",
-    "description": "Telegram bot for getting data from temperature sensor.",
+    "description": "Telegram bot for getting data from temperature sensor..",
     "main": "gulpfile.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
