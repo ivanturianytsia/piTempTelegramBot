@@ -1,0 +1,30 @@
+{
+    "name": "pitemptelegrambot",
+    "version": "1.0.0",
+    "description": "Telegram bot for getting data from temperature sensor",
+    "main": "gulpfile.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sirivan/piTempTelegramBot.git"
+    },
+    "keywords": [
+        "temperature",
+        "telegram",
+        "bot",
+        "pi"
+    ],
+    "author": "Ivan Turianytsia",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sirivan/piTempTelegramBot/issues"
+    },
+    "homepage": "https://github.com/sirivan/piTempTelegramBot#readme",
+    "dependencies": {
+        "gulp": "^3.9.1",
+        "gulp-git-watch": "^0.1.0",
+        "python-shell": "^0.4.0"
+    }
+}
