@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var gitWatch = require('gulp-git-watch');
-var shell = require('gulp-shell');
 
 var PythonShell = require('python-shell');
 var shell;
