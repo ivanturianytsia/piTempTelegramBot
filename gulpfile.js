@@ -17,6 +17,6 @@ gulp.task('default', function() {
                     console.log("ended");
                 })
             }
-            shell = new PythonShell('app.py')
+            shell = new PythonShell('server.py')
         });
 });
