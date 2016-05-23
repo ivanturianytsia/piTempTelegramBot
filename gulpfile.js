@@ -9,6 +9,9 @@ gulp.task('default', function() {
             gitPull: ['git', 'pull', 'origin', 'master'],
             forceHead: true
         })
+        .on('nochange', function(hash) {
+            console.log('Git no change on', hash);
+        })
         .on('change', function(newHash, oldHash) {
             console.log('Git CHANGES! FROM', oldHash, '->', newHash);
             if (shell) {
