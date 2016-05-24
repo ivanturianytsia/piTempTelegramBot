@@ -6,7 +6,7 @@ var shell;
 var startPython = function() {
     console.log("\t[Pyhon shell]: starting new...");
     shell = PythonShell.run('server.py', {}, function() {
-        console.log("\t[Pyhon shell]: new started.");
+        console.log("\t[Pyhon shell]: new started!");
     });
 }
 gulp.task('default', function() {
