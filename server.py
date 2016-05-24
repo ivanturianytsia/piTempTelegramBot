@@ -64,9 +64,9 @@ def echo_all(message):
 			times = 20
 		if(delay > 60):
 			delay = 60
-		bot.send_message(chatid, "I will send you " + times + " messages with " + delay + "s delay.")
+		bot.send_message(chatid, "I will send you " + str(times) + " messages with " + str(delay) + "s delay.")
 		for x in range(1,times + 1):
-			bot.send_message(chatid, "(" + x + "/" + times + ") Temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
+			bot.send_message(chatid, "(" + str(x) + "/" + str(times) + ") Temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
 			if(x = times):
 				bot.send_message(chatid, "Done.")
 			time.sleep(delay)
