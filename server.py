@@ -12,7 +12,7 @@ class Termometer(object):
 	def __init__(self):
 		os.system('modprobe w1-gpio')
 		os.system('modprobe w1-therm')
-		self.base_dir = '/sys/bus/w1/devices/'
+		self.base_dir = '~/sys/bus/w1/devices/'
 		self.device_folder = glob.glob(self.base_dir + '28*')[0]
 		self.device_file = self.device_folder + '/w1_slave'
 		self.temperature = 0
