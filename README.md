@@ -52,6 +52,6 @@ npm install
 ```
 Start polling repository:
 ```
-// sudo needed for temperature sensor
+# sudo needed for temperature sensor
 sudo gulp
 ```
