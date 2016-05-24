@@ -46,7 +46,7 @@ bot = telebot.AsyncTeleBot("230403950:AAHHFSPqeR4c9EdH0BuvJCFXVin7P0B-8Ck")
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    bot.send_message(message.from_user.id, "Welcome to our piTemperature service. Made by Ivan Turianytsia and Jarosław Bajer. Send 'temp' to get current temperature.")
+    bot.send_message(message.from_user.id, "Welcome to our piTemperature service. Made by Ivan Turianytsia and Jarosław Bajer. Send 'temp' to get current temperature. Send 'times <times> <delay>' to get messages repeatedly.")
 
 @bot.message_handler(func=lambda m: True)
 def echo_all(message):
@@ -58,8 +58,8 @@ def echo_all(message):
 	if message == "temp":
 		bot.send_message(chatid, "Currently temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
 	elif s:
-		times = s.group(1)
-		delay = s.group(2)
+		times = int(s.group(1))
+		delay = int(s.group(2))
 		if(times > 50):
 			times = 50
 		if(delay > 60):
@@ -68,6 +68,6 @@ def echo_all(message):
 			bot.send_message(chatid, "Currently temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
 			time.sleep(delay)
 	else:
-	    bot.send_message(chatid, "Send 'temp' to get current temperature.")
+	    bot.send_message(chatid, "Send 'temp' to get current temperature. Send 'times <times> <delay>' to get messages repeatedly.")
 
 bot.polling()
