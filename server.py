@@ -60,8 +60,8 @@ def echo_all(message):
 	elif s:
 		times = int(s.group(1))
 		delay = int(s.group(2))
-		if(times > 50):
-			times = 50
+		if(times > 20):
+			times = 20
 		if(delay > 60):
 			delay = 60
 		for x in range(0,times):
