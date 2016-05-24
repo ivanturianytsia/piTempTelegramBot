@@ -3,11 +3,11 @@ Telegram bot for getting data from temperature sensor. Written in Python.
 
 ## Setup
 Install python telegram bot API. Details can be found [here](https://github.com/eternnoir/pyTelegramBotAPI#writing-your-first-bot).
-```
+```bash
 pip install pyTelegramBotAPI
 ```
 Start the server:
-```
+```bash
 python server.py
 ```
 ## Usage
@@ -43,15 +43,15 @@ Done.
 Profit 2.0.
 ## Features
 Automatic pull requests and server starting script added using [Gulp](http://gulpjs.com/). First install gulp globally:
-```
+```bash
 npm install -g gulp
 ```
 Than install other packages:
-```
+```bash
 npm install
 ```
 Start polling repository:
-```
+```bash
 # sudo needed for temperature sensor
 sudo gulp
 ```
