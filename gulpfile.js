@@ -4,9 +4,9 @@ var gitWatch = require('gulp-git-watch');
 var PythonShell = require('python-shell');
 var shell;
 var startPython = function() {
-    console.log("Pyhon shell: starting new...");
+    console.log("[Pyhon shell]: starting new...");
     shell = new PythonShell('server.py')
-    console.log("Pyhon shell: New started");
+    console.log("[Pyhon shell]: new started");
 }
 gulp.task('default', function() {
     startPython()
@@ -17,9 +17,9 @@ gulp.task('default', function() {
         .on('change', function(newHash, oldHash) {
             console.log('Git CHANGES! FROM', oldHash, '->', newHash);
             if (shell) {
-                console.log("Pyhon shell: ending old...");
+                console.log("[Pyhon shell]: ending old...");
                 shell.end(function() {
-                    console.log("Pyhon shell: Old ended");
+                    console.log("[Pyhon shell]: old ended");
                     startPython()
                 })
             } else {
