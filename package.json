@@ -1,6 +1,6 @@
 {
     "name": "pitemptelegrambot",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "description": "Telegram bot for getting data from temperature sensor.",
     "main": "gulpfile.js",
     "scripts": {
