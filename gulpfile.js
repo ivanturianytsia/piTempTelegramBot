@@ -3,10 +3,12 @@ var gitWatch = require('gulp-git-watch');
 
 var PythonShell = require('python-shell');
 var shell;
-
-gulp.task('default', function() {
+var startPython() {
     shell = new PythonShell('server.py')
     console.log("Pyhon shell: New started");
+}
+gulp.task('default', function() {
+    startPython()
     return gitWatch({
             gitPull: ['git', 'pull', 'origin', 'master'],
             forceHead: true
@@ -16,12 +18,10 @@ gulp.task('default', function() {
             if (shell) {
                 shell.end(function() {
                     console.log("Pyhon shell: Old ended");
-                    shell = new PythonShell('server.py')
-                    console.log("Pyhon shell: New started");
+                    startPython()
                 })
             } else {
-                shell = new PythonShell('server.py')
-                console.log("Pyhon shell: New started");
+                startPython()
             }
         });
 });

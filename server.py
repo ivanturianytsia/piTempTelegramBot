@@ -5,14 +5,33 @@
 import telebot
 from random import randint
 import os
+import glob
+import time
 
 class Termometer(object):
 	def __init__(self):
+		os.system('modprobe w1-gpio')
+		os.system('modprobe w1-therm')
+		self.base_dir = '/sys/bus/w1/devices/'
+		self.device_folder = glob.glob(self.base_dir + '28*')[0]
+		self.device_file = self.device_folder + '/w1_slave'
 		self.temperature = 0
+	def measure_raw(self):
+		f = open(self.device_file, 'r')
+		lines = f.readlines()
+		f.close()
+		return lines
 	def measure(self):
-		# Get data from sensor here
-		self.temperature = randint(-20, 45)
-
+		lines = self.measure_raw()
+		while lines[0].strip()[-3:] != 'YES':
+			time.sleep(0.2)
+			lines = self.measure_raw()
+		equals_pos = lines[1].find('t=')
+		if equals_pos != -1:
+			temp_string = lines[1][equals_pos+2:]
+			self.temperature = float(temp_string) / 1000.0
+			# temp_f = temp_c * 9.0 / 5.0 + 32.0
+			# return temp_c, temp_f
 	def get(self):
 		self.measure()
 		return str(self.temperature)
