@@ -35,7 +35,7 @@ class Termometer(object):
 			# return temp_c, temp_f
 	def get(self):
 		self.measure()
-		return str(self.temperature)
+		return str(round(self.temperature, 2))
 
 t = Termometer()
 
