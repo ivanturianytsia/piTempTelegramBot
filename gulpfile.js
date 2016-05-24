@@ -6,7 +6,7 @@ var shell;
 var startPython = function() {
     console.log("\t[Pyhon shell]: starting new...");
     shell = PythonShell.run('server.py');
-    console.log("\t[Pyhon shell]: new started");
+    console.log("\t[Pyhon shell]: new started.");
 }
 gulp.task('default', function() {
     startPython()
@@ -20,9 +20,9 @@ gulp.task('default', function() {
                 console.log("\t[Pyhon shell]: ending old...");
                 shell.end(function(err) {
                     if (err) {
-                        console.log("\t[Pyhon shell]:" + err)
+                        console.log("\t[Pyhon shell]: " + err)
                     } else {
-                        console.log("\t[Pyhon shell]: old ended");
+                        console.log("\t[Pyhon shell]: old ended.");
                         startPython()
                     }
                 })
