@@ -67,7 +67,7 @@ def echo_all(message):
 		bot.send_message(chatid, "I will send you " + str(times) + " messages with " + str(delay) + "s delay.")
 		for x in range(1,times + 1):
 			bot.send_message(chatid, "(" + str(x) + "/" + str(times) + ") Temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
-			if(x = times):
+			if(x == times):
 				bot.send_message(chatid, "Done.")
 			time.sleep(delay)
 	else:
