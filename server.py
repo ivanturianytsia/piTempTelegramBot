@@ -7,6 +7,9 @@ from random import randint
 import os
 import glob
 import time
+import re
+
+timesPattern = "^times (\d+) (\d+)$"
 
 class Termometer(object):
 	def __init__(self):
@@ -39,7 +42,6 @@ class Termometer(object):
 
 t = Termometer()
 
-
 bot = telebot.AsyncTeleBot("230403950:AAHHFSPqeR4c9EdH0BuvJCFXVin7P0B-8Ck")
 
 @bot.message_handler(commands=['start', 'help'])
@@ -49,12 +51,19 @@ def send_welcome(message):
 @bot.message_handler(func=lambda m: True)
 def echo_all(message):
 	chatid = message.from_user.id
+	s = re.search(timesPattern, message)
 	if message.text.lower() == "temp":
 		bot.send_message(chatid, "Currently temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
-	elif message.text.lower() == "5":
-		for x in range(1,5):
+	elif s:
+		times = s.group(1)
+		delay = s.group(2)
+		if(times > 50):
+			times = 50
+		if(delay > 60):
+			delay = 60
+		for x in range(0,times):
 			bot.send_message(chatid, "Currently temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
-			time.sleep(5)
+			time.sleep(delay)
 	else:
 	    bot.send_message(chatid, "Send 'temp' to get current temperature.")
 
