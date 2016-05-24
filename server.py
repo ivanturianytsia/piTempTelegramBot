@@ -51,8 +51,11 @@ def send_welcome(message):
 @bot.message_handler(func=lambda m: True)
 def echo_all(message):
 	chatid = message.from_user.id
+	message = message.text.lower()
+
 	s = re.search(timesPattern, message)
-	if message.text.lower() == "temp":
+	
+	if message == "temp":
 		bot.send_message(chatid, "Currently temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
 	elif s:
 		times = s.group(1)
