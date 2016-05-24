@@ -23,9 +23,10 @@ gulp.task('default', function() {
                         console.log("\t[Pyhon shell]: " + err)
                     } else {
                         console.log("\t[Pyhon shell]: old ended.");
-                        startPython()
+
                     }
                 })
+                startPython()
             } else {
                 startPython()
             }
