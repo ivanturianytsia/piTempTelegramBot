@@ -26,9 +26,7 @@ gulp.task('default', function() {
 
                     }
                 })
-                startPython()
-            } else {
-                startPython()
             }
+            startPython()
         });
 });
