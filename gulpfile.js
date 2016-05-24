@@ -3,7 +3,7 @@ var gitWatch = require('gulp-git-watch');
 
 var PythonShell = require('python-shell');
 var shell;
-var startPython() {
+var startPython = function() {
     shell = new PythonShell('server.py')
     console.log("Pyhon shell: New started");
 }
