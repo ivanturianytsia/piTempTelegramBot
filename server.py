@@ -48,9 +48,14 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda m: True)
 def echo_all(message):
+	chatid = message.from_user.id
 	if message.text.lower() == "temp":
-		bot.send_message(message.from_user.id, "Currently temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
+		bot.send_message(chatid, "Currently temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
+	elif message.text.lower() == "5":
+		for x in range(1,5):
+			bot.send_message(chatid, "Currently temperature is: " + t.get() + u'\N{DEGREE SIGN}' + "C.")
+			time.sleep(5)
 	else:
-	    bot.send_message(message.from_user.id, "Send 'temp' to get current temperature.")
+	    bot.send_message(chatid, "Send 'temp' to get current temperature.")
 
 bot.polling()
